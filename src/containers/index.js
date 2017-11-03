@@ -16,6 +16,8 @@ import Logo from '../components/logo';
 import Keyboard from '../components/keyboard';
 import Guide from '../components/guide';
 
+import { initializeJohnnyFive } from '../actions/johnny';
+
 import { transform, lastRecord, speeds, i18n, lan } from '../unit/const';
 import { visibilityChangeEvent, isFocus } from '../unit/';
 import states from '../control/states';
@@ -30,6 +32,7 @@ class App extends React.Component {
   }
   componentWillMount() {
     window.addEventListener('resize', this.resize.bind(this), true);
+    this.props.dispatch(initializeJohnnyFive());
   }
   componentDidMount() {
     if (visibilityChangeEvent) { // 将页面的焦点变换写入store
