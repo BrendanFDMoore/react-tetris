@@ -4,20 +4,13 @@ import { combineEpics } from 'redux-observable';
 import {
   johnnyFiveListener,
   buttonEvents,
-  // ledOnCommands,
-  // ledOffCommands,
-  // ledBlinkCommands,
-  // ledPulseCommands
+  mapButtonPress,
+  mapButtonRelease,
 } from './johnny';
 
 export default combineEpics(
-  // userLogin,
-  // userLogout,
-  // fetchPopularRepos,
   johnnyFiveListener,
-  buttonEvents
-  // ledOnCommands,
-  // ledOffCommands,
-  // ledBlinkCommands,
-  // ledPulseCommands
+  buttonEvents,
+  mapButtonPress,
+  mapButtonRelease
 );
